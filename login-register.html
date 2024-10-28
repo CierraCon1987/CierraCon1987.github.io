@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Wags &amp; Whiskers</title>
     <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
-    
-    <!-- Bootstrap -->
-
 
     <!-- Custom CSS -->
     <link href="css/header.css" rel="stylesheet">
@@ -49,16 +46,16 @@
             // Redirect to Home page on successful login
             function handleLogin(event) {
                 event.preventDefault(); // Prevent form submission
-                
+
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-    
+
                 // Basic validation
                 if (email === '' || password === '') {
                     alert("Please enter both email and password.");
                     return;
                 }
-    
+
                 // Placeholder authentication (you can replace this with actual login logic)
                 if (email === 'user@example.com' && password === 'password123') {
                     // Redirect to the home page
@@ -67,12 +64,12 @@
                     alert("Invalid email or password. Please try again.");
                 }
             }
-    
+
             // Function to handle 'Forgot Password'
             function forgotPassword() {
                 alert("Forgot password functionality is currently not available.");
             }
-    
+
             // Function to save 'Remember Me' status
             function rememberMeStatus() {
                 const rememberMe = document.getElementById('rememberMe').checked;
@@ -91,19 +88,20 @@
                 <form onsubmit="handleLogin(event)">
                     <!-- Login Header -->
                     <h2 class="login-header">Login</h2>
-                    
+
                     <!-- Email Input -->
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
                     </div>
-                    
+
                     <!-- Password Input -->
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password"
+                            required>
                     </div>
-                    
+
                     <!-- Remember Me and Forgot Password Links -->
                     <div class="form-options">
                         <div class="form-check">
@@ -112,11 +110,11 @@
                         </div>
                         <a href="#" class="forgot-password" onclick="forgotPassword()">Forgot password?</a>
                     </div>
-                    
+
                     <!-- Login Button -->
                     <button type="submit" class="login-button">Login</button>
                 </form>
-                
+
                 <!-- New User Sign-Up Link -->
                 <div class="new-user-link">
                     <span>New user?</span> <a href="register.html">Create account</a>
@@ -129,8 +127,8 @@
             <div class="company-info">
                 <h2>Social Media</h2>
                 <p>
-                    Follow us on social media for the latest updates, 
-                    pet care tips, and exclusive offers! Stay connected with Wags 
+                    Follow us on social media for the latest updates,
+                    pet care tips, and exclusive offers! Stay connected with Wags
                     &amp; Whiskers and join our community of pet lovers.
                 </p>
                 <div class="social-icon">

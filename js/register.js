@@ -1,4 +1,3 @@
-// Handle registration form submission
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
 

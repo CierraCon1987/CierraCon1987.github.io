@@ -92,8 +92,8 @@ body {
     height: 80px;
     object-fit: contain;
 }
-.large-logo {
-    width: 100px; 
+.large-logo img {
+    width: 200px; 
     height: auto; 
 }
 .icon {
@@ -122,17 +122,18 @@ body {
     color: #f47c6b;
 }
 
-.view-button {
-    margin-top: 10px;
-    background-color: #01a089;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border 0.3s, transform 0.3s;
+.view-pet {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #01a089; /* Button color */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.view-button:hover {
-    background-color: #f47c6b;
+.view-pet:hover {
+    background-color: #f47c6b;/* Hover color */
 }
