@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+    line-height: 1.6;
+}
+
+.salute h1 {
+    font-size: 3rem;
+}
+
+.container-fluid {
+    padding-top: 30px;
+}
+
+/* Blog post styling */
+.blog-post {
+    margin-bottom: 30px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.blog-post h2 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.blog-post time {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.blog-post h2 a {
+    color: #2F4F4F;
+    text-decoration: none;
+}
+
+.blog-post h2 a:hover {
+    color: var(--compliment2);
+    text-decoration: underline;
+}
+
+/* Staff picks section */
+.staff-picks {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.staff-pick {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.staff-pick h3 a {
+    color: #2F4F4F;
+    text-decoration: none;
+}
+
+.staff-pick h3 a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}

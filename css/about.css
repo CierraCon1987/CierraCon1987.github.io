@@ -120,5 +120,8 @@ img {
 
 .store-image {
     max-width: 100%;
+}
 
+.salute h3 {
+    color: var(--white);
 }

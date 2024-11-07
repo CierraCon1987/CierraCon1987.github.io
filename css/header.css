@@ -135,7 +135,6 @@ body {
     padding: 20px;
 }
 
-
 .link-salute ul li:last-child {
     padding-left: 70px;
 }
@@ -212,6 +211,12 @@ body {
     font-weight: 900;
 }
 
+.salute h3 {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 40px;
+}
+
 .salute h4 {
     margin: 0;
     font-size: 35px;
@@ -219,6 +224,10 @@ body {
 
 .salute p {
     margin: 0;
+}
+
+#tagline {
+    padding-bottom: 50px;
 }
 
 /* header stylesheet ends here */
@@ -235,7 +244,6 @@ footer {
     display: flex;
     padding: 30px 40px;
     gap: 20px;
-
 }
 
 .link-section ul {
@@ -251,13 +259,11 @@ footer {
 .link-section ul li a {
     text-decoration: none;
     color: var(--black);
-
 }
-
 
 .company-info {
     flex-basis: 33%;
-    padding: 0 80px 0 0;
+    padding: 0 100px 0 0;
 }
 
 .company-info img {
@@ -266,8 +272,20 @@ footer {
     cursor: pointer;
 }
 
-.social-icon {
+footer .social-icon {
     display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: start; 
+    gap: 10px; 
+    padding: 0;
+    margin: 0;
+}
+
+footer .social-icon img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
 }
 
 .social-icon img:hover {

@@ -103,3 +103,45 @@ label {
 .login-link a:hover {
     text-decoration: underline;
 }
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group small {
+    color: red;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+.form-group.success input {
+    border-color: green;
+}
+
+.form-group.error input {
+    border-color: red;
+}
+.success-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Green color for success */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+/* Optional fade-in-out animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}

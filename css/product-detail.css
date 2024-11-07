@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.video-container {
+    position: relative;
+    padding-top: 56.25%; 
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.similar-products {
+    margin-top: 20px;
+}
+
+.similar-products .row {
+    margin-bottom: 10px;
+}
+
+.similar-products img {
+    width: 100%;
+    height: auto;
+}
+
+.ratings {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.custom-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 100px;
+}
+
+.custom-btn:hover {
+    background-color: var(--compliment2);
+}

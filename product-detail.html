@@ -7,10 +7,13 @@
     <title>Home | Wags &amp; Whiskers</title>
     <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Custom CSS -->
     <link href="css/header.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-    <script src="js/login.js"></script>
+    <link href="css/product-detail.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,7 +35,8 @@
                         <li><a href="adoption.html">Adoption</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
-                        <li id="login"><a href="login-register.html" class="active">Login</a><a href="register.html">Sign Up</a></li>
+                        <li id="login"><a href="login-register.html">Login</a><a href="login-register.html">Sign Up</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -43,85 +47,55 @@
             <h1>Wags &amp; Whiskers!</h1>
             <p id="tagline">Caring for Your Pets, One Wag at a Time</p>
         </div>
-        <script>
-            // Redirect to Home page on successful login
-            function handleLogin(event) {
-                event.preventDefault(); // Prevent form submission
-
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
-
-                // Basic validation
-                if (email === '' || password === '') {
-                    alert("Please enter both email and password.");
-                    return;
-                }
-
-                // Placeholder authentication (you can replace this with actual login logic)
-                if (email === 'user@example.com' && password === 'password123') {
-                    // Redirect to the home page
-                    window.location.href = "home.html";
-                } else {
-                    alert("Invalid email or password. Please try again.");
-                }
-            }
-
-            // Function to handle 'Forgot Password'
-            function forgotPassword() {
-                alert("Forgot password functionality is currently not available.");
-            }
-
-            // Function to save 'Remember Me' status
-            function rememberMeStatus() {
-                const rememberMe = document.getElementById('rememberMe').checked;
-                if (rememberMe) {
-                    alert("You will be remembered!");
-                }
-            }
-        </script>
     </header>
+    
     <main>
-        <div class="container">
-            <div class="login-form">
-                <h1 class="welcome-text">Welcome Back!</h1>
-                <img src="/images/wandw-logo-large.svg" alt="Pet Image" class="pet-image">
-
-                <form onsubmit="handleLogin(event)">
-                    <!-- Login Header -->
-                    <h2 class="login-header">Login</h2>
-
-                    <!-- Email Input -->
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="video-container">
+                        <video width="320" height="240" controls id="product-video" style="display: none;">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
                     </div>
-
-                    <!-- Password Input -->
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                    <div class="similar-products mt-4">
+                        <h5>Similar Products</h5>
+                        <div class="row" id="similar-products-grid"></div>
                     </div>
+                </div>
 
-                    <!-- Remember Me and Forgot Password Links -->
-                    <div class="form-options">
-                        <div class="form-check">
-                            <input type="checkbox" id="rememberMe" onclick="rememberMeStatus()">
-                            <label for="rememberMe">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password" onclick="forgotPassword()">Forgot password?</a>
+                <div class="col-md-6">
+                    <h1 id="product-title"></h1>
+                    <p id="product-price"></p>
+                    <select id="product-size" class="form-control mb-3">
+                        <option value="">Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <select id="product-color" class="form-control mb-3">
+                        <option value="">Color</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                    <p id="item-number"></p>
+                    <div id="product-description" class="mb-3"></div>
+                    <div id="product-features" class="mb-3"></div>
+                    <div class="ratings">
+                        <span id="product-reviews"></span>
+                        <span>25 Reviews</span>
                     </div>
-
-                    <!-- Login Button -->
-                <button type="submit"class="login-button">Login</button>
-                </form>
-
-                <!-- New User Sign-Up Link -->
-                <div class="new-user-link">
-                    <span>New user?</span> <a href="register.html">Create account</a>
+                    <button class="btn custom-btn mt-3" id="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
+
+        <!-- JavaScript -->
+        <script src="/js/product-detail.js"></script>
     </main>
+
     <footer>
         <div class="link-section">
             <div class="company-info">
