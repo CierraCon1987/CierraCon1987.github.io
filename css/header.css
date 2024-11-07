@@ -242,6 +242,7 @@ footer {
 
 .link-section {
     display: flex;
+    justify-content: space-between;
     padding: 30px 40px;
     gap: 20px;
 }
@@ -263,7 +264,7 @@ footer {
 
 .company-info {
     flex-basis: 33%;
-    padding: 0 100px 0 0;
+    padding: 0 20px;
 }
 
 .company-info img {
@@ -292,16 +293,13 @@ footer .social-icon img {
     transform: scale(1.2);
 }
 
-.quick-link {
-    flex-basis: 10%;
+.quick-link, .legal {
+    flex: 1; 
+    padding: 0 20px;
 }
 
 .quick-link ul li a:hover {
     color: var(--primary)
-}
-
-.legal {
-    flex-basis: 20%;
 }
 
 .legal ul li a:hover {
@@ -310,6 +308,9 @@ footer .social-icon img {
 
 .brand-logo {
     flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .brand-logo img {
@@ -319,6 +320,7 @@ footer .social-icon img {
 .copy-right-section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px 50px;
     background-color: var(--black);
     color: var(--white);
@@ -331,3 +333,15 @@ footer .social-icon img {
 }
 
 /* footer stylesheet ends here */
+
+
+/* Logo Animation */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+.wiggle-effect {
+    animation: wiggle 0.5s ease-in-out;
+}

@@ -6,11 +6,6 @@
     font-weight: bolder;
 }
 
-h2,
-h3 {
-    text-align: center;
-}
-
 .contact-us {
     padding: 20px 50px 0 50px;
 }
@@ -65,6 +60,11 @@ h3 {
 
 .contact-form h2 {
     text-align: left;
+    margin: 0;
+}
+
+.newsletter-header {
+    text-align: center;
     margin: 0;
 }
 
