@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             rescueCard.classList.add("rescue-card");
 
             rescueCard.innerHTML = `
-                <div class="logo">
+                <div class="weblogo">
                     <img src="${rescue.imageUrl}" alt="${rescue.name}">
                 </div>
                 <div class="rescue-details">

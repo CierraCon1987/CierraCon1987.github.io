@@ -83,7 +83,7 @@ body {
 .weblogo {
     flex: 0 0 100px;
     margin-right: 50px;
-    margin-top: -50px;
+    margin-top: -20px;
 }
 
 .weblogo img {
@@ -129,4 +129,6 @@ body {
 
 .view-pet:hover {
     background-color: #f47c6b;
+    color: #fff;
+    text-decoration: none;
 }
