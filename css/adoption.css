@@ -80,13 +80,13 @@ body {
     transform: scale(1.02); 
 }
 
-.logo {
+.weblogo {
     flex: 0 0 100px;
     margin-right: 50px;
     margin-top: -50px;
 }
 
-.logo img {
+.weblogo img {
     width: 80px;
     height: 80px;
     object-fit: contain;
