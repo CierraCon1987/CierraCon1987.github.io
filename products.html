@@ -8,14 +8,20 @@
     <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" defer rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Custom CSS -->
     <link href="css/header.css" rel="stylesheet">
     <link href="css/products.css" rel="stylesheet">
+    <link href="css/fadein.css" rel="stylesheet">
 
     <!-- Custom JS -->
+    <script src="scripts.js" defer></script>
     <script src="js/header.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/fadein.js" defer></script>
+
 </head>
 
 <body>
@@ -54,14 +60,14 @@
     <main>
         <br>
         <!-- Hero Section -->
-        <section id="hero" class="d-flex align-items-center">
+        <section id="hero" class="fade-in d-flex align-items-center">
             <div class="container hero-container text-center position-relative">
                 <h1>Products</h1>
             </div>
         </section>
 
         <!-- Products Section -->
-        <section id="products" class="container text-center mt-5">
+        <section id="product" class=" fade-in text-center mt-5">
             <div class="row">
                 <div class="col-md-4">
                     <div class="product-card" id="dog-product-card">
@@ -88,8 +94,20 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="tabs mt-5">
+        <!-- Search and Filter Section -->
+        <div class="fade-in search-container">
+            <input type="text" id="search" placeholder="Search products..." />
+            <select id="sort-price">
+                <option value="asc">Price Low to High</option>
+                <option value="desc">Price High to Low</option>
+            </select>
+        </div>
+
+        <!-- Product Section -->
+        <section class="product-section fade-in">
+            <div class="tabs-wrapper">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#dog-products">Dog Products</a>
@@ -101,162 +119,166 @@
                         <a class="nav-link" data-bs-toggle="tab" href="#other-products">Other Products</a>
                     </li>
                 </ul>
-
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="dog-products">
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="dog-products">
+                    <div class="product-grid">
                         <!-- Dog Product Items -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <a href="product-detail.html?id=1000001" class="card">
-                                        <img src="/images/products/1.jpeg" class="card-img-top" alt="Dog Product 1"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Classic Dog Toy<br>Treat Dispensing</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+                        <!-- <div class="product-card">
+                            <a href="product-detail.html?id=1000001" class="card">
+                                <img src="/images/products/1.jpeg" class="card-img-top" alt="Dog Product 1">
+                            </a>
+                            <div class="card-body">
+                                <h5>Classic Dog Toy <br>Treat Dispensing</h5>
+                                <button class="btn btn-success">Add to Cart</button>
+                            </div>
+                        </div>-->
 
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=1000002" class="card">
-                                        <img src="/images/products/2.jpeg" class="card-img-top" alt="Dog Product 2"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Classic Dog Toy<br>Bone</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=1000003" class="card">
-                                        <img src="/images/products/3.jpeg" class="card-img-top" alt="Dog Product 3"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Lobster Plushie<br>Dog Toy</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=1000004" class="card">
+                        <div class="product-card" data-product-id="1000001">
+                            <img src="/images/products/1.jpeg" alt="Dog Toy">
+                            <h3>Classic Dog Toy - Treat Dispensing</h3>
+                            <p>$16.99</p>
+                        </div>
 
-                                        <img src="/images/products/4.jpeg" class="card-img-top" alt="Dog Product 4"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tim Hortons Plushie<br>Dog Toy</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+
+                        <div class="product-card">
+                            <a href="product-detail.html?id=1000002" class="card">
+                                <img src="/images/products/2.jpeg" class="card-img-top" alt="Dog Product 2">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Dog Toy<br>Bone</h5>
+                                <button class="btn btn-success">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=1000003" class="card">
+                                <img src="/images/products/3.jpeg" class="card-img-top" alt="Dog Product 3">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Lobster Plushie<br>Dog Toy</h5>
+                                <button class="btn btn-success">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=1000004" class="card">
+
+                                <img src="/images/products/4.jpeg" class="card-img-top" alt="Dog Product 4">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Tim Hortons Plushie<br>Dog Toy</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="cat-products">
-                        <!-- Cat Product Items -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <a href="product-detail.html?id=2000001" class="card">
-                                        <img src="/images/products/24.png" class="card-img-top" alt="Cat Product 1"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Classic Cat Toy<br>Feather Ball</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+                    <div class="see-more-wrapper">
+                        <button class="see-more-btn" onclick="showMoreProducts(this)">See More</button>
+                    </div>
+                </div>
 
+                <div class="tab-pane fade" id="cat-products">
+                    <!-- Cat Product Items -->
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <a href="product-detail.html?id=2000001" class="card">
+                                <img src="/images/products/24.png" class="card-img-top" alt="Cat Product 1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Cat Toy<br>Feather Ball</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=2000002" class="card">
-                                        <img src="/images/products/23.png" class="card-img-top" alt="Cat Product 2"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Classic Cat Toy<br>Jingle Balls (3 Pack)</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=2000002" class="card">
+                                <img src="/images/products/23.png" class="card-img-top" alt="Cat Product 2"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Cat Toy<br>Jingle Balls (3 Pack)</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=2000003" class="card">
-                                        <img src="/images/products/22.png" class="card-img-top" alt="Cat Product 3"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Cat Plushie Cat Nip<br>Cat Toy</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=2000003" class="card">
+                                <img src="/images/products/22.png" class="card-img-top" alt="Cat Product 3"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">Cat Plushie Cat Nip<br>Cat Toy</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <a href="product-detail.html?id=2000004" class="card">
-
-                                        <img src="/images/products/18.png" class="card-img-top" alt="Cat Product 4"></a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Flirt Pole Feather<br>Cat Toy</h5>
-                                        <button class="btn btn-success">Add to Cart</button>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=2000004" class="card">
+                                <img src="/images/products/18.png" class="card-img-top" alt="Cat Product 4">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Flirt Pole Feather<br>Cat Toy</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
                         </div>
                     </div>
+                    <div class="see-more-wrapper">
+                        <button class="see-more-btn" onclick="showMoreProducts(this)">See More</button>
+                    </div>
+                </div>
+
                 <div class="tab-pane fade" id="other-products">
                     <!-- Other Product Items -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <a href="product-detail.html?id=3000001" class="card">
-                                    <img src="/images/products/small-pet1.webp" class="card-img-top"
-                                        alt="Other Product 1"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Bat Cave <br>Small Pet Bed</h5>
-                                    <button class="btn btn-success">Add to Cart</button>
-                                </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <a href="product-detail.html?id=3000001" class="card">
+                                <img src="/images/products/small-pet1.webp" class="card-img-top" alt="Other Product 1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Bat Cave <br>Small Pet Bed</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
 
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <a href="product-detail.html?id=3000002" class="card">
-                                    <img src="/images/products/small-pet2.webp" class="card-img-top"
-                                        alt="Other Product 2"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Pumpkin<br>Small Pet Costume</h5>
-                                    <button class="btn btn-success">Add to Cart</button>
-                                </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=3000002" class="card">
+                                <img src="/images/products/small-pet2.webp" class="card-img-top" alt="Other Product 2">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Pumpkin<br>Small Pet Costume</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <a href="product-detail.html?id=3000003" class="card">
-                                    <img src="/images/products/small-pet3.webp" class="card-img-top"
-                                        alt="Other Product 3"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Mermaid Tail<br>Character Hut</h5>
-                                    <button class="btn btn-success">Add to Cart</button>
-                                </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=3000003" class="card">
+                                <img src="/images/products/small-pet3.webp" class="card-img-top" alt="Other Product 3">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Mermaid Tail<br>Character Hut</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <a href="product-detail.html?id=3000004" class="card">
-                                    <img src="/images/products/small-pet4.webp" class="card-img-top"
-                                        alt="Other Product 4"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Wooden Circle<br>Aquarium Ornament</h5>
-                                    <button class="btn btn-success">Add to Cart</button>
-                                </div>
+                        <div class="product-card">
+                            <a href="product-detail.html?id=3000004" class="card">
+                                <img src="/images/products/small-pet4.webp" class="card-img-top" alt="Other Product 4">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Wooden Circle<br>Aquarium Ornament</h5>
+                                <button class="btn btn-success">Add to Cart</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="see-more-wrapper">
+                        <button class="see-more-btn" onclick="showMoreProducts(this)">See More</button>
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
-            </div>
         </section>
 
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Custom JS -->
-        <script src="scripts.js"></script>
+        <!-- Overlay -->
+        <div class="overlay" id="productOverlay">
+            <div class="overlay-content">
+                <img id="overlayImage" src="" alt="Product Image">
+                <button id="close-button">X</button>
+                <h3 id="overlayTitle"></h3>
+                <p id="overlayDescription"></p>
+                <p id="overlayPrice"></p>
+                <p id="overlayFeatures"></p>
+                <button id="addToCartBtn">Add to Cart</button>
+                <a href="#" id="viewProductBtn">View Full Product</a>
+            </div>
+        </div>
 
     </main>
     <footer>

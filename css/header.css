@@ -29,19 +29,6 @@
 
     --full-screen: 70.5rem;
 
-    /* border-radius */
-    --border-radius-1: var(--size-xs);
-    --border-radius-2: var(--size-sm);
-
-
-    /* border */
-    --border-primary-1: 1px solid var(--primary);
-    --border-primary-2: 2px solid var(--primary);
-
-    --border-tertiary-1: 1px solid var(--secondary);
-    --border-tertiary-2: 2px solid var(--secondary);
-
-
 }
 
 body {
@@ -60,7 +47,6 @@ body {
 /* header stylesheet starts here */
 
 .main-header {
-    background-image: linear-gradient(351deg, transparent, #00000073), url(../images/header-bg.png);
     height: 400px;
     display: flex;
     background-size: cover;
@@ -86,7 +72,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(351deg, transparent, rgba(0, 0, 0, 0.45));
     z-index: 1;
 }
 
@@ -159,7 +144,7 @@ body {
     border: solid 2px var(--primary);
     margin-right: 10px;
     padding: 10px 30px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: 16px;
     color: var(--white);
 }
@@ -169,15 +154,15 @@ body {
     border: solid 2px var(--compliment2);
     margin-right: 10px;
     padding: 10px 30px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: 16px;
-    color: var(--black);
+    color: var(--white);
 }
 
 .link-salute ul li:last-child a:last-child {
     border: solid 2px var(--primary);
     padding: 10px 30px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: 16px;
     color: var(--white);
     font-size: 16px;
@@ -186,7 +171,7 @@ body {
 .link-salute ul li:last-child a:last-child:hover {
     border: solid 2px var(--compliment2);
     padding: 10px 30px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: 16px;
     color: var(--white);
     font-size: 16px;

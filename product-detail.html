@@ -13,9 +13,13 @@
     <!-- Custom CSS -->
     <link href="css/header.css" rel="stylesheet">
     <link href="css/product-detail.css" rel="stylesheet">
+    <link href="css/fadein.css" rel="stylesheet">
 
     <!-- Custom JS -->
     <script src="js/header.js" defer></script>
+    <script src="/js/product-detail.js" defer></script>
+    <script src="js/fadein.js" defer></script>
+
 </head>
 
 <body>
@@ -54,7 +58,7 @@
     <main>
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6">
+                <div class="fade-in col-md-6">
                     <div class="video-container">
                         <video width="320" height="240" controls id="product-video" style="display: none;">
                             <source src="" type="video/mp4">
@@ -67,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="fade-in col-md-6">
                     <h1 id="product-title"></h1>
                     <p id="product-price"></p>
                     <select id="product-size" class="form-control mb-3">
@@ -94,8 +98,6 @@
             </div>
         </div>
 
-        <!-- JavaScript -->
-        <script src="/js/product-detail.js"></script>
     </main>
 
     <footer>
