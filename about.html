@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Wags &amp; Whiskers</title>
     <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
-
+    
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+ 
     <!-- Custom CSS -->
+    <link href="css/about.css " rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
-    <link href="css/about.css" rel="stylesheet">
     <link href="css/fadein.css" rel="stylesheet">
 
     <!-- Custom JS -->
@@ -41,7 +40,12 @@
                         <li><a href="adoption.html">Adoption</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
-                        <li id="login"><a href="login-register.html">Login</a><a href="login-register.html">Sign Up</a>
+                        <li class="login-signup">
+                            <a href="login-register.html">Login</a>
+                            <a href="register.html">Sign Up</a>
+                        </li>
+                        <li class="cart-icon">
+                            <a href="cart.html"><img src="/images/general/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Cart" style="width: 24px; height: 24px;"></a>
                         </li>
                     </ul>
                 </div>
@@ -166,6 +170,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/about.js"></script>
 </body>
 
 </html>

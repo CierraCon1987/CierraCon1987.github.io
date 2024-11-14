@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Wags &amp; Whiskers</title>
     <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
-    
+
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
- 
+
     <!-- Custom CSS -->
     <link href="css/index.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
@@ -40,8 +40,15 @@
                         <li><a href="adoption.html">Adoption</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
-                        <li id="login"><a href="login-register.html">Login</a>
-                            <a href="register.html">Sign Up</a></li>
+                        <li class="login-signup">
+                            <a href="login-register.html">Login</a>
+                            <a href="register.html">Sign Up</a>
+                        </li>
+                        <li class="cart-icon">
+                            <a href="cart.html"><img
+                                    src="/images/general/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+                                    alt="Cart" style="width: 24px; height: 24px;"></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +71,7 @@
                         <h1 class="hero-title">Your One-Stop Shop for All Things Pets!</h1>
                         <p class="hero-description">Whether you're looking for nutritious food, fun toys, or comfy
                             bedding, we've got you covered.</p>
-                        <a href="#" class="cta-button btn">Shop Now</a>
+                        <a href="products.html" class="cta-button btn">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +99,7 @@
                 <div class="contact-info">
                     <h2 class="contact-title">Have a Question?</h2>
                     <p class="contact-description">Contact us at 251-678-345 or fill out our contact form.</p>
-                    <a href="#" class="cta-button">Contact Us</a>
+                    <a href="contact.html" class="cta-button">Contact Us</a>
                 </div>
                 <div class="contact-image-container">
                     <img src="images/general/upsidedowncat.jpg" alt="cat" class="contact-image" loading="lazy">
@@ -188,6 +195,7 @@
         </div>
     </div>
 </footer>
+<script src="js/index.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
