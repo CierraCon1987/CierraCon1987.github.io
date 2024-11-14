@@ -39,18 +39,20 @@ function showMoreProducts(button) {
 
 // Product and Overlay Info
 document.addEventListener("DOMContentLoaded", function () {
-  // Load the product data
   fetch('js/products.json')
     .then(response => response.json())
     .then(data => {
       window.productData = data;
     })
     .catch(error => console.error('Error loading product data:', error));
+  });
 
-  // Add click event listeners to each product card
+  let selectedProductId = null;
+
   document.querySelectorAll('.product-card').forEach(card => {
     card.addEventListener('click', function () {
       selectedProductId = this.getAttribute('data-product-id');
+      
       const product = window.productData[selectedProductId];
 
       if (product) {
@@ -76,6 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  document.getElementById('viewFullProduct').addEventListener('click', function() {
+    if (selectedProductId) {
+      window.location.href = `product-detail.html?id=${selectedProductId}`;
+    } else {
+      console.error('No product selected.');
+    }
+  });
+
   // Overlay and Close Button Functionality
   const overlay = document.getElementById('productOverlay');
   const closeButton = document.getElementById('closebutton');
@@ -97,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.stopPropagation();
     closeOverlay();
   });
-});
+
 
 // "View Full Product" button functionality
 document.addEventListener("DOMContentLoaded", function()
@@ -109,5 +119,5 @@ document.addEventListener("DOMContentLoaded", function()
     } else {
       console.error('ERROR: Page does not exist - No product selected.');
     }
-  })
-})
+  });
+});
