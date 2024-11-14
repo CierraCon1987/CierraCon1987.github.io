@@ -1,148 +1,173 @@
 {
-    "1000001": {
-      "title": "Classic Dog Toy - Treat Dispensing",
-      "price": 16.99,
-      "description": "A durable, treat-dispensing toy designed to keep your dog engaged and mentally stimulated.",
-      "features": [
-        "Durable rubber construction",
-        "Dishwasher safe",
-        "Unpredictable bounce for added fun",
-        "Can be filled with treats"
-      ],
-      "video": "/videos/aquarium-ornament.mp4",
-      "image": "/images/products/1.jpeg"    
-    },
-    "1000002": {
-      "title": "Classic Dog Toy - Bone",
-      "price": 12.99,
-      "description": "The classic bone-shaped dog toy, perfect for fetch and chewing.",
-      "features": [
-        "Made from natural rubber",
-        "Great for dogs that love to chew",
-        "Easy to clean"
-      ],
-      "image": "/images/products/2.jpeg",
-      "video": "/videos/dog-toy2.mp4"
-    },
-    "1000003": {
-      "title": "Lobster Plushie Dog Toy",
-      "price": 9.99,
-      "description": "A fun, plush toy shaped like a lobster, great for cuddling and light play.",
-      "features": [
-        "Soft plush material",
-        "Built-in squeaker",
-        "Perfect for small to medium dogs"
-      ],
-      "image": "/images/products/3.jpeg",
-      "video": "/videos/dog-toy3.mp4"
-    },
-    "1000004": {
-      "title": "Tim Hortons Plushie Dog Toy",
-      "price": 14.99,
-      "description": "A cute plushie dog toy shaped like a Tim Hortons cup, perfect for playful pups.",
-      "features": [
-        "Unique design",
-        "Soft and cuddly",
-        "Squeaker inside for interactive fun"
-      ],
-      "image": "/images/products/4.jpeg",
-      "video": "/videos/dog-toy4.mp4"
-    },
-    "2000001": {
-      "title": "Classic Cat Toy - Feather Ball",
-      "price": 6.99,
-      "description": "A feathered ball toy that stimulates your cat's natural hunting instincts.",
-      "features": [
-        "Lightweight design for easy batting",
-        "Colorful feathers for visual stimulation",
-        "Durable construction"
-      ],
-      "image": "/images/products/24.png",
-      "video": "/videos/cat-toy1.mp4"
-    },
-    "2000002": {
-      "title": "Classic Cat Toy - Jingle Balls (3 Pack)",
-      "price": 7.99,
-      "description": "A pack of three jingle balls that are perfect for chasing and batting.",
-      "features": [
-        "Built-in bell for audible play",
-        "Lightweight and easy to chase",
-        "Comes in a pack of 3"
-      ],
-      "image": "/images/products/23.png",
-      "video": "/videos/cat-toy2.mp4"
-    },
-    "2000003": {
-      "title": "Cat Plushie Cat Nip Toy",
-      "price": 8.99,
-      "description": "A plush catnip-infused toy designed to attract and entertain your cat.",
-      "features": [
-        "Infused with catnip",
-        "Soft plush exterior",
-        "Perfect for solo play"
-      ],
-      "image": "/images/products/22.png",
-      "video": "/videos/cat-toy3.mp4"
-    },
-    "2000004": {
-      "title": "Flirt Pole Feather Cat Toy",
-      "price": 11.99,
-      "description": "A flirt pole with feathers that encourages active play and exercise for your cat.",
-      "features": [
-        "Interactive toy for cats",
-        "Feather attachment",
-        "Extendable pole for dynamic play"
-      ],
-      "image": "/images/products/18.png",
-      "video": "/videos/cat-toy4.mp4"
-    },
-    "3000001": {
-      "title": "Bat Cave Small Pet Bed",
-      "price": 25.99,
-      "description": "A cozy, bat-shaped pet bed designed for small pets like hamsters and guinea pigs.",
-      "features": [
-        "Soft and plush interior",
-        "Unique bat design",
-        "Perfect for small pets"
-      ],
-      "image": "/images/products/small-pet1.webp",
-      "video": "/videos/small-pet-bed1.mp4"
-    },
-    "3000002": {
-      "title": "Pumpkin Small Pet Costume",
-      "price": 14.99,
-      "description": "A cute pumpkin costume designed for small pets like rabbits and guinea pigs.",
-      "features": [
-        "Adorable pumpkin design",
-        "Adjustable straps for a comfortable fit",
-        "Lightweight and breathable"
-      ],
-      "image": "/images/products/small-pet2.webp",
-      "video": "/videos/small-pet-costume.mp4"
-    },
-    "3000003": {
-      "title": "Mermaid Tail Character Hut",
-      "price": 35.99,
-      "description": "A fun, mermaid-themed hut for small pets to hide and sleep in.",
-      "features": [
-        "Mermaid tail design",
-        "Soft interior",
-        "Great for small pets to rest"
-      ],
-      "image": "/images/products/small-pet3.webp",
-      "video": "/videos/small-pet-hut.mp4"
-    },
-    "3000004": {
-      "title": "Wooden Circle Aquarium Ornament",
-      "price": 9.99,
-      "description": "A wooden circle ornament designed for aquariums, perfect for fish to swim through.",
-      "features": [
-        "Natural wood design",
-        "Safe for freshwater and saltwater tanks",
-        "Adds an aesthetic touch to any aquarium"
-      ],
-      "image": "/images/products/small-pet4.webp",
-      "video": "/videos/aquarium-ornament.mp4"
-    }
+  "1000001": {
+    "title": "Classic Dog Toy - Treat Dispensing",
+    "price": 16.99,
+    "description": "A durable, treat-dispensing toy designed to keep your dog engaged and mentally stimulated.",
+    "features": [
+      "Durable rubber construction",
+      "Dishwasher safe",
+      "Unpredictable bounce for added fun",
+      "Can be filled with treats"
+    ],
+    "video": "/videos/kong-video.mp4",
+    "images": [
+      "/images/products/1.jpeg",
+      "/images/products/1a.jpeg",
+      "/images/products/1b.jpeg"
+    ]
+  },
+  "1000002": {
+    "title": "Classic Dog Toy - Bone",
+    "price": 12.99,
+    "description": "The classic bone-shaped dog toy, perfect for fetch and chewing.",
+    "features": [
+      "Made from natural rubber",
+      "Great for dogs that love to chew",
+      "Easy to clean"
+    ],
+    "video": "/videos/dog-toy2.mp4",
+    "images": [
+      "/images/products/2.jpeg"
+    ]
+  },
+  "1000003": {
+    "title": "Lobster Plushie Dog Toy",
+    "price": 9.99,
+    "description": "A fun, plush toy shaped like a lobster, great for cuddling and light play.",
+    "features": [
+      "Soft plush material",
+      "Built-in squeaker",
+      "Perfect for small to medium dogs"
+    ],
+    "video": "/videos/dog-toy3.mp4",
+    "images": [
+      "/images/products/3.jpeg"
+    ]
+  },
+  "1000004": {
+    "title": "Tim Hortons Plushie Dog Toy",
+    "price": 14.99,
+    "description": "A cute plushie dog toy shaped like a Tim Hortons cup, perfect for playful pups.",
+    "features": [
+      "Unique design",
+      "Soft and cuddly",
+      "Squeaker inside for interactive fun"
+    ],
+    "video": "/videos/dog-toy4.mp4",
+    "images": [
+      "/images/products/4.jpeg"
+    ]
+  },
+  "2000001": {
+    "title": "Classic Cat Toy - Feather Ball",
+    "price": 6.99,
+    "description": "A feathered ball toy that stimulates your cat's natural hunting instincts.",
+    "features": [
+      "Lightweight design for easy batting",
+      "Colorful feathers for visual stimulation",
+      "Durable construction"
+    ],
+    "video": "/videos/cat-toy1.mp4",
+    "images": [
+      "/images/products/24.png"
+    ]
+  },
+  "2000002": {
+    "title": "Classic Cat Toy - Jingle Balls (3 Pack)",
+    "price": 7.99,
+    "description": "A pack of three jingle balls that are perfect for chasing and batting.",
+    "features": [
+      "Built-in bell for audible play",
+      "Lightweight and easy to chase",
+      "Comes in a pack of 3"
+    ],
+    "video": "/videos/cat-toy2.mp4",
+    "images": [
+      "/images/products/23.png"
+    ]
+  },
+  "2000003": {
+    "title": "Cat Plushie Cat Nip Toy",
+    "price": 8.99,
+    "description": "A plush catnip-infused toy designed to attract and entertain your cat.",
+    "features": [
+      "Infused with catnip",
+      "Soft plush exterior",
+      "Perfect for solo play"
+    ],
+    "video": "/videos/cat-toy3.mp4",
+    "images": [
+      "/images/products/22.png"
+    ]
+  },
+  "2000004": {
+    "title": "Flirt Pole Feather Cat Toy",
+    "price": 11.99,
+    "description": "A flirt pole with feathers that encourages active play and exercise for your cat.",
+    "features": [
+      "Interactive toy for cats",
+      "Feather attachment",
+      "Extendable pole for dynamic play"
+    ],
+    "video": "/videos/cat-toy4.mp4",
+    "images": [
+      "/images/products/18.png"
+    ]
+  },
+  "3000001": {
+    "title": "Bat Cave Small Pet Bed",
+    "price": 25.99,
+    "description": "A cozy, bat-shaped pet bed designed for small pets like hamsters and guinea pigs.",
+    "features": [
+      "Soft and plush interior",
+      "Unique bat design",
+      "Perfect for small pets"
+    ],
+    "video": "/videos/small-pet-bed1.mp4",
+    "images": [
+      "/images/products/small-pet1.webp"
+    ]
+  },
+  "3000002": {
+    "title": "Pumpkin Small Pet Costume",
+    "price": 14.99,
+    "description": "A cute pumpkin costume designed for small pets like rabbits and guinea pigs.",
+    "features": [
+      "Adorable pumpkin design",
+      "Adjustable straps for a comfortable fit",
+      "Lightweight and breathable"
+    ],
+    "video": "/videos/small-pet-costume.mp4",
+    "images": [
+      "/images/products/small-pet2.webp"
+    ]
+  },
+  "3000003": {
+    "title": "Mermaid Tail Character Hut",
+    "price": 35.99,
+    "description": "A fun, mermaid-themed hut for small pets to hide and sleep in.",
+    "features": [
+      "Mermaid tail design",
+      "Soft interior",
+      "Great for small pets to rest"
+    ],
+    "video": "/videos/small-pet-hut.mp4",
+    "images": [
+      "/images/products/small-pet3.webp"
+    ]
+  },
+  "3000004": {
+    "title": "Wooden Circle Aquarium Ornament",
+    "price": 9.99,
+    "description": "A wooden circle ornament designed for aquariums, perfect for fish to swim through.",
+    "features": [
+      "Natural wood design",
+      "Safe for freshwater and saltwater tanks",
+      "Adds an aesthetic touch to any aquarium"
+    ],
+    "video": "/videos/aquarium-ornament.mp4",
+    "images": [
+      "/images/products/small-pet4.webp"
+    ]
   }
-  
+}

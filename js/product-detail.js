@@ -4,6 +4,20 @@ const productId = urlParams.get('id');
 
 console.log("Product ID from URL:", productId);
 
+let currentImageIndex = 0;
+
+function updateCarousel(images) {
+    const carouselContainer = document.getElementById('carousel-images');
+    if (images && images.length > 0) {
+        carouselContainer.innerHTML = ''; 
+        const imgElement = document.createElement('img');
+        imgElement.src = images[currentImageIndex];
+        imgElement.className = 'carousel-image';
+        imgElement.alt = `Product Image ${currentImageIndex + 1}`;
+        carouselContainer.appendChild(imgElement);
+    }
+}
+
 // Get info from JSON File
 fetch('/js/products.json')
     .then(response => response.json())
@@ -26,18 +40,21 @@ fetch('/js/products.json')
             }
 
             // Image Carousel
-            const carouselContainer = document.getElementById('carousel-images');
             if (product.images && product.images.length > 0) {
-                carouselContainer.innerHTML = '';
-                product.images.forEach((imgPath, index) => {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = imgPath;
-                    imgElement.className = 'carousel-image';
-                    carouselContainer.appendChild(imgElement);
+                updateCarousel(product.images);
+
+                document.getElementById('nextBtn').addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex + 1) % product.images.length;
+                    updateCarousel(product.images);
+                });
+                document.getElementById('prevBtn').addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+                    updateCarousel(product.images);
                 });
             } else {
                 console.error("No images found for the carousel.");
             }
+
             // Features List
             const featuresList = document.getElementById('features-list');
             featuresList.innerHTML = '';
