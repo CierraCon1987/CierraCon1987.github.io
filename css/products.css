@@ -124,6 +124,13 @@ body {
     z-index: 2;
 }
 
+.product-card h3,
+.product-card p {
+    color: var(--black);
+    font-weight: 400;
+    font-size: var(--size-1xl);
+}
+
 .product-card img {
     width: 100%;
     height: auto;
@@ -146,6 +153,11 @@ body {
 }
 
 .product-card button:hover {
+    background-color: var(--compliment2);
+    font-weight: 600;
+}
+
+.product-card button:active {
     background-color: var(--compliment2);
 }
 
@@ -194,7 +206,7 @@ body {
     font-size: 16px;
     border: 2px solid #00A08B;
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--white);
     outline: none;
 }
 
@@ -231,12 +243,12 @@ body {
 .nav-link.active {
     color: var(--white);
     background-color: var(--primary);
-    border-color: #00A08B #00A08B #00A08B;
+    border-color: var(--primary);
 }
 
 .nav-tabs .nav-item .nav-link.active {
     background-color: var(--compliment2);
-    color: white;
+    color: var(--white);
 }
 
 /* Inactive tabs */
@@ -268,7 +280,7 @@ body {
 }
 
 .product-card {
-    background-color: #fff;
+    background-color: var(--white);
     border: 2px solid #00A08B;
     border-radius: 5px;
     overflow: hidden;
@@ -353,13 +365,13 @@ body {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--black);
 
 }
 
 /* Overlay Content */
 .overlay-content {
-    background: #fff;
+    background: var(--white);
     padding: 20px;
     max-width: 500px;
     width: 80%;
@@ -368,7 +380,7 @@ body {
     border-radius: 10px;
 }
 
-#close-button{
+#closebutton{
     position: absolute;
     color: var(--compliment2);
     font-size: 50px;
