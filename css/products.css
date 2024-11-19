@@ -124,6 +124,13 @@ body {
     z-index: 2;
 }
 
+.product-card h3,
+.product-card p {
+    color: var(--black);
+    font-weight: 400;
+    font-size: var(--size-1xl);
+}
+
 .product-card img {
     width: 100%;
     height: auto;
@@ -146,6 +153,11 @@ body {
 }
 
 .product-card button:hover {
+    background-color: var(--compliment2);
+    font-weight: 600;
+}
+
+.product-card button:active {
     background-color: var(--compliment2);
 }
 
@@ -194,7 +206,7 @@ body {
     font-size: 16px;
     border: 2px solid #00A08B;
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--white);
     outline: none;
 }
 
@@ -231,12 +243,12 @@ body {
 .nav-link.active {
     color: var(--white);
     background-color: var(--primary);
-    border-color: #00A08B #00A08B #00A08B;
+    border-color: var(--primary);
 }
 
 .nav-tabs .nav-item .nav-link.active {
     background-color: var(--compliment2);
-    color: white;
+    color: var(--white);
 }
 
 /* Inactive tabs */
@@ -268,7 +280,7 @@ body {
 }
 
 .product-card {
-    background-color: #fff;
+    background-color: var(--white);
     border: 2px solid #00A08B;
     border-radius: 5px;
     overflow: hidden;
@@ -345,38 +357,51 @@ body {
 .overlay {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 800px;
+    height: auto;
+    max-height: 650px;
+    background-color: rgb(255, 255, 255);
     z-index: 1000;
+    display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-
+    color: var(--black);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;  
 }
 
 /* Overlay Content */
 .overlay-content {
-    background: #fff;
+    background: var(--white);
     padding: 20px;
     max-width: 500px;
-    width: 80%;
+    width: 100%;
     text-align: center;
     color: var(--black);
     border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-#close-button{
+#closebutton{
     position: absolute;
+    top: 10px;
+    right: 10px;
     color: var(--compliment2);
     font-size: 50px;
     border: none;
-    margin: 0 0 0 90px;
     cursor: pointer;
     background-color: transparent;
     transition: background-color 0.3s ease;
+}
+
+#closebutton:hover {
+    color: var(--primary);
 }
 
 #overlayImage {
@@ -418,6 +443,7 @@ body {
     background-color: var(--compliment2);
     color: var(--white);
     border-radius: 5px;
+    border: none;
     transform: scale(1.05);
 }
 

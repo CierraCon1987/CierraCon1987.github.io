@@ -90,7 +90,7 @@ body {
     flex-shrink: 0;
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Adds space above the logo */
+    margin-top: 20px;
 }
 
 .logo img {
@@ -117,11 +117,12 @@ body {
 
 .links ul li a.active {
     color: var(--accent1);
-    border-bottom: 3px solid var(--accent1); /* Orange underline for active page */
+    border-bottom: 3px solid var(--accent1);
 }
 
 .links ul li a:hover {
     color: var(--primary);
+    color: var(--white);
 }
 
 /* Login and Sign Up Buttons */
