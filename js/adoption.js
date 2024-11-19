@@ -60,22 +60,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to filter rescues and display results
     function searchRescues() {
-        const locationInput = document.querySelector(".search-input[placeholder='Location']").value;
-        const rescueNameInput = document.querySelector(".search-input[placeholder='Rescue Name']").value.toLowerCase();
-
-        console.log("Location selected:", locationInput);  // Debugging log
-        console.log("Rescue name entered:", rescueNameInput);  // Debugging log
-
+        const locationSelect = document.querySelector("#location-select").value; // Targeting the select element
+        const rescueNameInput = document.querySelector("#rescue-name").value.toLowerCase(); // Targeting the text input
+    
+        console.log("Location selected:", locationSelect); // Debugging log
+        console.log("Rescue name entered:", rescueNameInput); // Debugging log
+    
         const filteredRescues = rescues.filter(rescue => {
-            const matchesLocation = locationInput === "" || rescue.location === locationInput;
-            const matchesRescueName = rescueNameInput === "" || rescue.name.toLowerCase().includes(rescueNameInput);
+            const matchesLocation = !locationSelect || rescue.location === locationSelect;
+            const matchesRescueName = !rescueNameInput || rescue.name.toLowerCase().includes(rescueNameInput);
             return matchesLocation && matchesRescueName;
         });
-
-        console.log("Filtered rescues:", filteredRescues);  // Debugging log
-
+    
+        console.log("Filtered rescues:", filteredRescues); // Debugging log
+    
         displayRescues(filteredRescues);
     }
+    
 
     // Function to display rescues
     function displayRescues(rescuesToShow) {

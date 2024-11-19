@@ -132,3 +132,19 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
+#google_translate_element {
+    display: flex;
+    padding: 7px;
+    border: 1px solid #01a089;
+    border-radius: 5px;
+    margin-top: 20px; 
+    margin-right: auto;
+}
+#google_translate_element:hover{
+    background-color: #f47c6b;
+}
+.goog-te-gadget {
+    color: #333;
+    font-size: 14px;
+}

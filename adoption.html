@@ -25,14 +25,16 @@
 
 <body>
     <header class="page-header">
-        <video autoplay muted loop id="background-video">
+        <video autoplay muted loop id="background-video" poster="/images/videos/wandw-header-vid.mp4">
             <source src="../images/videos/wandw-header-vid.mp4" type="video/mp4">
+
             Your browser does not support the video tag.
         </video>
         <div class="header-content">
             <div class="logo">
                 <a href="index.html"><img src="/images/wandw-logo-large.svg" alt="logo"></a>
             </div>
+            <div id="google_translate_element"></div>
             <div class="link-salute">
                 <div class="links">
                     <ul>
@@ -50,6 +52,7 @@
                             <a href="cart.html"><img src="/images/general/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Cart" style="width: 24px; height: 24px;"></a>
                         </li>
                     </ul>
+                   
                 </div>
             </div>
         </div>
@@ -58,21 +61,34 @@
             <h1>Wags &amp; Whiskers!</h1>
             <p id="tagline">Caring for Your Pets, One Wag at a Time</p>
         </div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,fr,es,gu,af,zh-CN,ja,pa,ml',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </header><br>
+   
     <main>
        <div class="fade-in adoption-container">
             <div class="search-section"> 
                 <h1>Search Rescued Pet in Your Area</h1>
                 <div class="search-bar">
-                    <select class="search-input" placeholder="Location">
-                        <option value="">Location</option>
+                    <label for="location-select" class="sr-only">Select Location</label>
+    <select id="location-select" class="search-input">
+                        <option value=""disabled selected>Location</option>
                         <option value="Kitchener">Kitchener, ON</option>
                         <option value="Waterloo">Waterloo, ON</option>
                         <option value="Cambridge">Cambridge, ON</option>
                     </select>
                     <span style="color: whitesmoke;">or</span>
-                    <input type="text" class="search-input" placeholder="Rescue Name">
-                    <button class="search-button">Search</button>
+                    <label for="rescue-name" class="sr-only">Enter Rescue Name</label>
+    <input id="rescue-name" type="text" class="search-input" placeholder="Rescue Name">
+    <button class="search-button" aria-label="Search for Rescued Pets">Search</button>
                 </div>
             </div>
 
@@ -235,6 +251,8 @@
             </div>
         </div>
     </footer>
+   
+    
 </body>
 
 </html>
