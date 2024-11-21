@@ -188,4 +188,5 @@ main {
 
 #backToProductsBtn:hover {
     background-color: var(--compliment2);
+    transform: scale(1.05);
 }

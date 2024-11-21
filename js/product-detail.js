@@ -9,7 +9,7 @@ let currentImageIndex = 0;
 function updateCarousel(images) {
     const carouselContainer = document.getElementById('carousel-images');
     if (images && images.length > 0) {
-        carouselContainer.innerHTML = ''; 
+        carouselContainer.innerHTML = '';
         const imgElement = document.createElement('img');
         imgElement.src = images[currentImageIndex];
         imgElement.className = 'carousel-image';
@@ -63,6 +63,55 @@ fetch('/js/products.json')
                 listItem.innerText = feature;
                 featuresList.appendChild(listItem);
             });
+
+            // Function to add the product to the cart
+            function addToCart(productId) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                const productIndex = cart.findIndex(item => item.id === productId);
+
+                if (productIndex === -1) {
+                    cart.push({
+                        id: productId,
+                        quantity: 1
+                    });
+                    console.log("Product added to cart:", productId);
+                } else {
+                    cart[productIndex].quantity += 1;
+                    console.log("Product quantity updated:", productId);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                showSuccessMessage();
+            }
+
+            // Function to show success message
+            function showSuccessMessage() {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'cart-success-message';
+                messageElement.textContent = 'Added to Cart!';
+                messageElement.style.color = 'red';
+                messageElement.style.fontWeight = 'bold';
+                messageElement.style.marginTop = '10px';
+
+                const productDetailsSection = document.querySelector('.product-details');
+                productDetailsSection.appendChild(messageElement);
+
+                // Remove  message after 5 seconds
+                setTimeout(() => {
+                    messageElement.remove();
+                }, 5000);
+            }
+
+            // Add to Cart Button
+            const addToCartButton = document.getElementById('addToCartButton');
+            if (addToCartButton) {
+                addToCartButton.addEventListener('click', () => {
+                    addToCart(productId);
+                });
+            }
+
         } else {
             console.error("Product not found with ID:", productId);
             document.body.innerHTML = "<h2>Product not found</h2>";
@@ -74,9 +123,9 @@ fetch('/js/products.json')
     });
 
 // Back to Products button
-const backButton = document.getElementById('backToProductsBtn');
-
-backButton.addEventListener("click", function() {
-    window.location.href = "products.html";
-});
-
+const backToProductsBtn = document.getElementById('backToProductsBtn');
+if (backToProductsBtn) {
+    backToProductsBtn.addEventListener('click', () => {
+        window.location.href = 'products.html'; // Redirect to the products page
+    });
+}

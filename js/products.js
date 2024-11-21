@@ -1,5 +1,8 @@
 // Products Info
 let originalProducts = [];
+let filteredProducts = [];
+let displayedCount = 0; // Tracks how many products are currently displayed
+let productsPerPage = 8;
 let selectedProductId = null;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch('js/products.json')
     .then(response => response.json())
     .then(data => {
-      // Convert products object to an array
       originalProducts = Object.keys(data).map(key => ({
         id: key,
         ...data[key]
       }));
-      displayProducts(originalProducts);
+      filteredProducts = [...originalProducts]; // Initially, no filtering
+      displayProducts(displayedCount, productsPerPage);
     })
     .catch(error => console.error('Error loading product data:', error));
+
+  document.getElementById('productOverlay').style.display = 'none';
 
   // Check overlay state on page load
   const overlayState = sessionStorage.getItem('overlayOpen');
@@ -27,36 +32,53 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add event listeners for search and sorting
   document.getElementById("search").addEventListener("input", filterProducts);
   document.getElementById("sort-price").addEventListener("change", filterProducts);
+  document.getElementById("sort-category").addEventListener("change", filterProducts);
+  document.getElementById("see-more-btn").addEventListener("click", loadMoreProducts);
+  document.getElementById("productOverlay").addEventListener("click", closeOverlay);
+  document.getElementById('closebutton').addEventListener('click', function (event) {
+    event.stopPropagation();
+    closeOverlay();
+  });
 });
 
 // Display Products
-function displayProducts(filteredProducts) {
+function displayProducts(startIndex, count) {
   const productContainer = document.getElementById("product-container");
-  productContainer.innerHTML = ""; // Clear existing products
 
-  if (filteredProducts.length === 0) {
-    // Display a message if no products match
-    productContainer.innerHTML = "<p>No products match your search.</p>";
-    return;
-  }
+  // Get products to display based on the filtered products array
+  const productsToDisplay = filteredProducts.slice(startIndex, startIndex + count);
 
-  filteredProducts.forEach(product => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product-card");
-    productElement.setAttribute('data-product-id', product.id);
-    productElement.innerHTML = `
-      <img src="${product.images[0]}" alt="${product.title}">
+  // If no products to display, hide the "See More" button
+  if (productsToDisplay.length === 0) {
+    document.getElementById('see-more-btn').style.display = 'none'; 
+  } else {
+    productsToDisplay.forEach(product => {
+      const productElement = document.createElement("div");
+      productElement.classList.add("product-card");
+      productElement.setAttribute('data-product-id', product.id);
+      productElement.innerHTML = `
+        <img src="${product.images[0]}" alt="${product.title}">
         <h3>${product.title}</h3>
         <p>${product.description}</p>
         <p class="price">${product.price}</p>
-    `;
-    productContainer.appendChild(productElement);
-  });
+      `;
+      productElement.addEventListener('click', showProductOverlay); // Add event listener for overlay
+      productContainer.appendChild(productElement);
+    });
+  }
 
-  // Add click event listeners to show overlay
-  document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('click', showProductOverlay);
-  });
+  // Check if there are more products to load
+  if (startIndex + count < filteredProducts.length) {
+    document.getElementById('see-more-btn').style.display = 'block';
+  } else {
+    document.getElementById('see-more-btn').style.display = 'none';
+  }
+}
+
+// Load More Products
+function loadMoreProducts() {
+  displayedCount += productsPerPage; // Increase the number of displayed products
+  displayProducts(displayedCount, productsPerPage); // Display the next set of products
 }
 
 // Filter Products
@@ -70,7 +92,7 @@ function filterProducts() {
   console.log("Sort Order:", sortOrder);
   console.log("Selected Category:", selectedCategory);
 
-  let filteredProducts = [...originalProducts];
+  filteredProducts = [...originalProducts]; // Reset to original products first
 
   // Search filter
   if (searchTerm) {
@@ -94,13 +116,14 @@ function filterProducts() {
   }
 
   console.log("filtered products:", filteredProducts);
-  displayProducts(filteredProducts);
+
+  // Reset the displayed count and show the first page of filtered products
+  displayedCount = 0;
+  displayProducts(displayedCount, productsPerPage);
 }
 
-document.getElementById("sort-category").addEventListener("change", filterProducts);
-
-// Show Overlay
-function showProductOverlay() {
+// Show Product Overlay
+function showProductOverlay(event) {
   selectedProductId = this.getAttribute('data-product-id');
   const product = originalProducts.find(p => p.id === selectedProductId);
 
@@ -120,6 +143,7 @@ function showProductOverlay() {
 
     document.getElementById('productOverlay').style.display = 'flex';
     sessionStorage.setItem('overlayOpen', 'true');
+
     // Add to Cart button
     const addToCartButton = document.getElementById('addToCartOverlay');
     addToCartButton.onclick = function () {
@@ -136,7 +160,55 @@ function closeOverlay() {
   sessionStorage.setItem('overlayOpen', 'false');
 }
 
-// Event listeners for overlay closing
+// Add to Cart
+function addToCart(product) {
+  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+  const productIndex = cart.findIndex(item => item.id === product.id);
+
+  if (productIndex > -1) {
+    cart[productIndex].quantity += 1;
+  } else {
+    cart.push({ id: product.id, quantity: 1 });
+  }
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+  updateCartDisplay();
+  showSuccessMessage();
+}
+
+// Show Success Message
+function showSuccessMessage() {
+  const successMessage = document.getElementById('success-message');
+
+  if (!successMessage) {
+    const messageElement = document.createElement('div');
+    messageElement.id = 'success-message';
+    messageElement.textContent = 'Added to Cart!';
+    messageElement.style.color = 'red';
+    messageElement.style.fontWeight = 'bold';
+    messageElement.style.marginTop = '10px';
+
+    const addToCartButton = document.getElementById('addToCartOverlay');
+    if (addToCartButton) {
+      addToCartButton.parentNode.appendChild(messageElement);
+    }
+
+    // Remove message after 5 seconds
+    setTimeout(() => {
+      messageElement.remove();
+    }, 5000);
+  }
+}
+
+// Update Cart Display
+function updateCartDisplay() {
+  const cartCountElement = document.getElementById('cart-count');
+  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  cartCountElement.textContent = totalItems;
+}
+
+// Event listeners for overlay closing (existing function, no changes needed)
 const overlay = document.getElementById('productOverlay');
 overlay.addEventListener('click', function (event) {
   if (event.target === overlay) closeOverlay();
@@ -155,34 +227,3 @@ document.getElementById('viewFullProduct').addEventListener('click', function ()
     console.error('ERROR: No product selected.');
   }
 });
-
-// Add to Cart
-function addToCart(productId) {
-
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-  const productIndex = cart.findIndex(item => item.id === productId);
-
-  if (productIndex > -1) {
-    cart[productIndex].quantity += 1;
-  } else {
-    cart.push({ id: productId, quantity: 1 });
-  }
-
-  sessionStorage.setItem('cart', JSON.stringify(cart));
-  updateCartDisplay();
-}
-
-// Update Cart Display
-function updateCartDisplay() {
-  const cartCountElement = document.getElementById('cart-count');
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  if (cartCountElement) {
-    cartCountElement.textContent = totalItems > 0 ? totalItems : '';
-    cartCountElement.style.display = totalItems > 0 ? 'block' : 'none';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', updateCartDisplay);
