@@ -388,3 +388,126 @@ section {
     border-radius: 5px;
     transform: scale(1.05);
 }
+
+/* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 800px;
+    height: auto;
+    max-height: 650px;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;  
+}
+
+/* Overlay Content */
+.overlay-content {
+    background: var(--white);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    color: var(--black);
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#closebutton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--compliment2);
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+#closebutton:hover {
+    color: var(--primary);
+}
+
+#overlayImage {
+    max-width: 100%;
+    max-height: auto;
+}
+
+#overlayTitle {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#overlayDescription {
+    margin-top: 10px;
+}
+
+#overlayPrice {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--primary);
+  }
+
+#addToCartBtn {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--primary);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin: 20px;
+}
+
+#addToCartBtn:hover {
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: var(--compliment2);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    transform: scale(1.05);
+}
+
+#viewProductBtn {
+    margin-top: 10px;
+    display: block;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+#viewProductBtn:hover {
+    margin-top: 10px;
+    display: block;
+    color: var(--compliment2);
+    text-decoration: none;
+}
+#google_translate_element {
+    display: flex;
+    padding: 7px;
+    border: 1px solid #01a089;
+    border-radius: 5px;
+    margin-top: 20px; 
+    margin-right: auto;
+}
+#google_translate_element:hover{
+    background-color: #f47c6b;
+}
+.goog-te-gadget {
+    color: #333;
+    font-size: 14px;
+}
