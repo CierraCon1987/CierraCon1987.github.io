@@ -72,3 +72,11 @@ fetch('/js/products.json')
         console.error("Error fetching product data:", error);
         document.body.innerHTML = "<h2>Error loading product details</h2>";
     });
+
+// Back to Products button
+const backButton = document.getElementById('backToProductsBtn');
+
+backButton.addEventListener("click", function() {
+    window.location.href = "products.html";
+});
+

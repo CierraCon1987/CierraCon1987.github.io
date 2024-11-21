@@ -2,6 +2,7 @@
   "1000001": {
     "title": "Classic Dog Toy - Treat Dispensing",
     "price": 16.99,
+    "category":"Dog",
     "description": "A durable, treat-dispensing toy designed to keep your dog engaged and mentally stimulated.",
     "features": [
       "Durable rubber construction",
@@ -19,6 +20,7 @@
   "1000002": {
     "title": "Classic Dog Toy - Bone",
     "price": 12.99,
+    "category":"Dog",
     "description": "The classic bone-shaped dog toy, perfect for fetch and chewing.",
     "features": [
       "Made from natural rubber",
@@ -33,6 +35,7 @@
   "1000003": {
     "title": "Lobster Plushie Dog Toy",
     "price": 9.99,
+    "category":"Dog",
     "description": "A fun, plush toy shaped like a lobster, great for cuddling and light play.",
     "features": [
       "Soft plush material",
@@ -47,6 +50,7 @@
   "1000004": {
     "title": "Tim Hortons Plushie Dog Toy",
     "price": 14.99,
+    "category":"Dog",
     "description": "A cute plushie dog toy shaped like a Tim Hortons cup, perfect for playful pups.",
     "features": [
       "Unique design",
@@ -61,6 +65,7 @@
   "2000001": {
     "title": "Classic Cat Toy - Feather Ball",
     "price": 6.99,
+    "category":"Cat",
     "description": "A feathered ball toy that stimulates your cat's natural hunting instincts.",
     "features": [
       "Lightweight design for easy batting",
@@ -75,6 +80,7 @@
   "2000002": {
     "title": "Classic Cat Toy - Jingle Balls (3 Pack)",
     "price": 7.99,
+    "category":"Cat",
     "description": "A pack of three jingle balls that are perfect for chasing and batting.",
     "features": [
       "Built-in bell for audible play",
@@ -89,6 +95,7 @@
   "2000003": {
     "title": "Cat Plushie Cat Nip Toy",
     "price": 8.99,
+    "category":"Cat",
     "description": "A plush catnip-infused toy designed to attract and entertain your cat.",
     "features": [
       "Infused with catnip",
@@ -103,6 +110,7 @@
   "2000004": {
     "title": "Flirt Pole Feather Cat Toy",
     "price": 11.99,
+    "category":"Cat",
     "description": "A flirt pole with feathers that encourages active play and exercise for your cat.",
     "features": [
       "Interactive toy for cats",
@@ -117,6 +125,7 @@
   "3000001": {
     "title": "Bat Cave Small Pet Bed",
     "price": 25.99,
+    "category":"Other",
     "description": "A cozy, bat-shaped pet bed designed for small pets like hamsters and guinea pigs.",
     "features": [
       "Soft and plush interior",
@@ -131,6 +140,7 @@
   "3000002": {
     "title": "Pumpkin Small Pet Costume",
     "price": 14.99,
+    "category":"Other",
     "description": "A cute pumpkin costume designed for small pets like rabbits and guinea pigs.",
     "features": [
       "Adorable pumpkin design",
@@ -145,6 +155,7 @@
   "3000003": {
     "title": "Mermaid Tail Character Hut",
     "price": 35.99,
+    "category":"Other",
     "description": "A fun, mermaid-themed hut for small pets to hide and sleep in.",
     "features": [
       "Mermaid tail design",
@@ -159,6 +170,7 @@
   "3000004": {
     "title": "Wooden Circle Aquarium Ornament",
     "price": 9.99,
+    "category":"Other",
     "description": "A wooden circle ornament designed for aquariums, perfect for fish to swim through.",
     "features": [
       "Natural wood design",
