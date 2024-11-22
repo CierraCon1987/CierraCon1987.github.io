@@ -266,6 +266,11 @@ section {
     width: 60%;  
     max-width: 800px; 
     box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #productOverlay.active {
@@ -420,7 +425,6 @@ section {
     color: var(--black);
     border-radius: 10px;
     box-sizing: border-box;
-    overflow: hidden;
     position: relative; 
     display: flex; 
     flex-direction: column; 
@@ -432,7 +436,7 @@ section {
     justify-content: space-between; 
     gap: 10px;
     width: 100%; 
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 /* Add to Cart Button */
@@ -521,7 +525,7 @@ section {
     text-align: center;
     width: 100%;
     display: block;
-}
+} 
 
 /* Overlay Responsiveness */
 @media (max-width: 768px) {

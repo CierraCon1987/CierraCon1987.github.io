@@ -6,6 +6,7 @@ let productsPerPage = 8;
 let selectedProductId = null;
 
 document.addEventListener("DOMContentLoaded", function () {
+  
   // Fetch product data
   fetch('js/products.json')
     .then(response => response.json())
@@ -34,12 +35,30 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("sort-price").addEventListener("change", filterProducts);
   document.getElementById("sort-category").addEventListener("change", filterProducts);
   document.getElementById("see-more-btn").addEventListener("click", loadMoreProducts);
-  document.getElementById("productOverlay").addEventListener("click", closeOverlay);
-  document.getElementById('closebutton').addEventListener('click', function (event) {
-    event.stopPropagation();
-    closeOverlay();
+
+  // Event listener for overlay closing (combined)
+  const overlay = document.getElementById('productOverlay');
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeOverlay(); // Close when clicking on the overlay background
+    }
   });
+
+  // Close button listener (prevents overlay close when clicked)
+  const closeButton = document.getElementById('closebutton');
+  if (closeButton) {
+    closeButton.addEventListener('click', function (event) {
+      event.stopPropagation(); // Prevent click event from propagating to overlay
+      closeOverlay();
+    });
+  }
 });
+
+// Close Overlay 
+function closeOverlay() {
+  document.getElementById('productOverlay').style.display = 'none';
+  sessionStorage.setItem('overlayOpen', 'false');
+}
 
 // Display Products
 function displayProducts(startIndex, count) {
@@ -59,7 +78,7 @@ function displayProducts(startIndex, count) {
       productElement.innerHTML = `
         <img src="${product.images[0]}" alt="${product.title}">
         <h3>${product.title}</h3>
-        <p>${product.description}</p>
+        <p>${product.shortdes}</p>
         <p class="price">${product.price}</p>
       `;
       productElement.addEventListener('click', showProductOverlay); // Add event listener for overlay
@@ -87,11 +106,6 @@ function filterProducts() {
   const sortOrder = document.getElementById("sort-price").value;
   const selectedCategory = document.getElementById("sort-category").value;
 
-  console.log("Filtering products...");
-  console.log("Search Term:", searchTerm);
-  console.log("Sort Order:", sortOrder);
-  console.log("Selected Category:", selectedCategory);
-
   filteredProducts = [...originalProducts]; // Reset to original products first
 
   // Search filter
@@ -115,8 +129,6 @@ function filterProducts() {
     });
   }
 
-  console.log("filtered products:", filteredProducts);
-
   // Reset the displayed count and show the first page of filtered products
   displayedCount = 0;
   displayProducts(displayedCount, productsPerPage);
@@ -130,7 +142,7 @@ function showProductOverlay(event) {
   if (product) {
     document.getElementById('overlayImage').src = product.images[0];
     document.getElementById('overlayTitle').textContent = product.title;
-    document.getElementById('overlayDescription').textContent = product.description;
+    document.getElementById('overlayDescription').textContent = product.shortdes;
     document.getElementById('overlayPrice').textContent = `$${product.price}`;
 
     const featuresList = document.getElementById('overlayFeatures');
@@ -144,6 +156,8 @@ function showProductOverlay(event) {
     document.getElementById('productOverlay').style.display = 'flex';
     sessionStorage.setItem('overlayOpen', 'true');
 
+    resetAddToCartButton(); // Reset the button state before adding functionality
+
     // Add to Cart button
     const addToCartButton = document.getElementById('addToCartOverlay');
     addToCartButton.onclick = function () {
@@ -154,15 +168,17 @@ function showProductOverlay(event) {
   }
 }
 
-// Close Overlay
-function closeOverlay() {
-  document.getElementById('productOverlay').style.display = 'none';
-  sessionStorage.setItem('overlayOpen', 'false');
+// Reset Add to Cart Button
+function resetAddToCartButton() {
+  const addToCartButton = document.getElementById('addToCartOverlay');
+  addToCartButton.textContent = "Add to Cart";
+  const successMessage = document.getElementById('success-message');
+  if (successMessage) successMessage.remove(); // Remove any existing success message
 }
 
 // Add to Cart
 function addToCart(product) {
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const productIndex = cart.findIndex(item => item.id === product.id);
 
   if (productIndex > -1) {
@@ -171,59 +187,47 @@ function addToCart(product) {
     cart.push({ id: product.id, quantity: 1 });
   }
 
-  sessionStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart));
   updateCartDisplay();
   showSuccessMessage();
-}
-
-// Show Success Message
-function showSuccessMessage() {
-  const successMessage = document.getElementById('success-message');
-
-  if (!successMessage) {
-    const messageElement = document.createElement('div');
-    messageElement.id = 'success-message';
-    messageElement.textContent = 'Added to Cart!';
-    messageElement.style.color = 'red';
-    messageElement.style.fontWeight = 'bold';
-    messageElement.style.marginTop = '10px';
-
-    const addToCartButton = document.getElementById('addToCartOverlay');
-    if (addToCartButton) {
-      addToCartButton.parentNode.appendChild(messageElement);
-    }
-
-    // Remove message after 5 seconds
-    setTimeout(() => {
-      messageElement.remove();
-    }, 5000);
-  }
 }
 
 // Update Cart Display
 function updateCartDisplay() {
   const cartCountElement = document.getElementById('cart-count');
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   cartCountElement.textContent = totalItems;
 }
 
-// Event listeners for overlay closing (existing function, no changes needed)
-const overlay = document.getElementById('productOverlay');
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) closeOverlay();
-});
+// Show Success Message
+function showSuccessMessage() {
+  const successMessage = document.createElement('div');
+  successMessage.id = 'success-message';
+  successMessage.textContent = 'Added to Cart!';
+  successMessage.style.color = 'red';
+  successMessage.style.fontWeight = 'bold';
 
-document.getElementById('closebutton').addEventListener('click', function (event) {
-  event.stopPropagation();
-  closeOverlay();
-});
+  const addToCartButton = document.getElementById('addToCartOverlay');
+  addToCartButton.textContent = 'Added to Cart'; // Update button text
 
-// View Full Product
-document.getElementById('viewFullProduct').addEventListener('click', function () {
-  if (selectedProductId) {
-    window.location.href = `product-detail.html?id=${selectedProductId}`;
-  } else {
-    console.error('ERROR: No product selected.');
-  }
+  setTimeout(() => {
+    successMessage.remove();
+    resetAddToCartButton(); 
+  }, 5000);
+
+  addToCartButton.parentNode.appendChild(successMessage);
+}
+
+// Reset Add to Cart Button
+function resetAddToCartButton() {
+  const addToCartButton = document.getElementById('addToCartOverlay');
+  addToCartButton.textContent = "Add to Cart";
+  const successMessage = document.getElementById('success-message');
+  if (successMessage) successMessage.remove();
+}
+
+// Initialize Cart Display on Page Load
+document.addEventListener("DOMContentLoaded", function () {
+  updateCartDisplay(); // Ensure the cart count reflects the stored cart state
 });
