@@ -43,3 +43,38 @@
 .create-account-btn:hover {
     background-color: #ff6347;
 }
+
+
+#backToProductsBtn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px ;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0 0 50px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#backToProductsBtn:hover {
+    background-color: var(--compliment2);
+}
+
+.cartBtn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px ;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0 0 50px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.cartBtn:hover {
+    background-color: var(--compliment2);
+}

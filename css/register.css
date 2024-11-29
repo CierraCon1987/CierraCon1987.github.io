@@ -104,13 +104,12 @@ label {
     text-decoration: underline;
 }
 .form-group {
-    position: relative;
+   
     margin-bottom: 15px;
 }
 
 .form-group small {
     color: red;
-    position: absolute;
     bottom: -18px;
     left: 0;
 }

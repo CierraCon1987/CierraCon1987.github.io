@@ -39,4 +39,3 @@ function proceedToCheckout() {
 }
 
 window.onload = displayCart;
-
