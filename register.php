@@ -1,36 +1,36 @@
 <?php
-// Include your database connection file
-include('database_connection.php');
+// Include database connection file
+include 'database_connection.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data from the form
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password for security
 
-    // Sanitize and validate data as needed
-    $name = htmlspecialchars($name);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert into the database
+    // SQL query to insert data into users table
     $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $name, $email, $password);
 
-    if ($stmt->execute()) {
-        echo "Account created successfully!";
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("sss", $name, $email, $password);
+
+        // Attempt to execute the prepared statement
+        if ($stmt->execute()) {
+            echo "Account created successfully!";
+        } else {
+            echo "Error: Could not execute the query. " . $conn->error;
+        }
+
+        $stmt->close();
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: Could not prepare the query. " . $conn->error;
     }
 
-    // Close the statement and connection
-    $stmt->close();
     $conn->close();
 } else {
-    // If it's not a POST request, redirect or handle the error
     echo "Invalid request method.";
 }
 ?>
+
 
 

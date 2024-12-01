@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirmPassword");
-    const rememberMeCheckbox = document.getElementById("rememberMe");
 
     // Regex patterns for validation
     const namePattern = /^[a-zA-Z\s]{2,50}$/;
@@ -79,8 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isPasswordValid = validatePassword();
