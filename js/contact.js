@@ -92,38 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const invalidFields = document.querySelectorAll('.invalid');
       invalidFields.forEach(field => field.classList.remove('invalid'));
-  }
+  };
+});
 
   // Newsletter Signup Submit Handler
-  newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearErrors();
-      
-      const email = emailInput.value.trim();
+  document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+    e.preventDefault(); 
 
-      // Validation
-      if (!email) {
-          showError('newsletterEmail', 'Please enter an email to subscribe.');
-          return;
-      }
+    const email = document.getElementById('newsletterEmail').value;
+    const messageElement = document.getElementById('newsletterMessage');
 
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          showError('newsletterEmail', 'Please enter a valid email address.');
-          return;
-      }
+    messageElement.textContent = '';
 
-      // Show confirmation message
-      alert('Thank you for subscribing to our newsletter!');
-      emailInput.value = ''; // Clear input field on successful submission
-  });
-
-  function showError(fieldId, message) {
-      const field = document.getElementById(fieldId);
-      const errorSpan = document.getElementById(`${fieldId}Error`);
-
-      field.classList.add('invalid'); // Add red border style
-      errorSpan.textContent = message; // Display error message below field
-  }
+    // Simulating a successful subscription
+    if (email) {
+        messageElement.textContent = "Thank you for subscribing to our newsletter!";
+        messageElement.style.color = "green"; 
+    } else {
+        messageElement.textContent = "Please enter a valid email.";
+        messageElement.style.color = "red"; 
+    }
 });
 
 
@@ -132,4 +120,4 @@ function initMap() {
       center: {lat: -34.397, lng: 150.644},
       zoom: 8
     });
-  }
+};
