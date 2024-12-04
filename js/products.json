@@ -1,38 +1,53 @@
 {
   "1000001": {
-    "title": "Classic Dog Toy - Treat Dispensing",
+    "title": "KONG® Classic Dog Toy - Treat Dispensing",
     "price": 16.99,
-    "description": "A durable, treat-dispensing toy designed to keep your dog engaged and mentally stimulated.",
+    "category":"Dog",
+    "shortdes": "A durable, treat-dispensing toy designed to keep your dog engaged and mentally stimulated.",
+    "description": "The KONG Classic is the gold standard of dog toys and has become the staple for dogs around the world for over forty years. Offering enrichment by helping satisfy dogs’ instinctual needs, the KONG Classic’s unique natural red rubber formula is ultra-durable with an erratic bounce that is ideal for dogs that like to chew while also fulfilling a dog’s need to play. Want to extend play time? Be sure to stuff with tempting bits of kibble and entice with a dash of peanut butter. Add to the fun by adding KONG Snacks and topping with KONG Easy Treat.",
     "features": [
-      "Durable rubber construction",
-      "Dishwasher safe",
-      "Unpredictable bounce for added fun",
-      "Can be filled with treats"
+      "Mentally stimulating toy; offering enrichment by helping satisfy dogs’ instinctual needs",
+      "Unpredictable bounce for games of fetch",
+      "Recommended by veterinarians and trainers worldwide",
+      "Great for stuffing with KONG Easy Treat; Snacks or Ziggies",
+      "KONG classic red rubber formula for average chewers",
+      "Natural Rubber"
     ],
-    "video": "/videos/kong-video.mp4",
+    "video": "/images/videos/kong-video.mp4",
     "images": [
       "/images/products/1.jpeg",
       "/images/products/1a.jpeg",
-      "/images/products/1b.jpeg"
+      "/images/products/1b.jpeg",
+      "/images/products/T2_LIFE_1.jpg"
     ]
   },
   "1000002": {
-    "title": "Classic Dog Toy - Bone",
+    "title": "KONG Goodie Bone",
     "price": 12.99,
-    "description": "The classic bone-shaped dog toy, perfect for fetch and chewing.",
+    "category":"Dog",
+    "shortdes": "The KONG Goodie Bone™ is a durable chew toy made from natural rubber, designed to engage dogs in long-lasting chew sessions while dispensing treats for added fun.",
+    "description": "The KONG Goodie Bone™ toy engages dogs that delight in chew sessions. Made from the KONG Classic unique natural red rubber formula, this bone features the patented Goodie Grippers ™ that turn this entertaining toy into a fun treat dispensing challenge that can be stuffed with your dog’s favorite kibble. Want to extend the chew session? Stuff with KONG Snacks™ and entice with a bit of KONG Easy Treat™.",
     "features": [
-      "Made from natural rubber",
-      "Great for dogs that love to chew",
-      "Easy to clean"
+      "Durable natural KONG Rubber; bone shaped for chewing satisfaction",
+      "Two Goodie Grippers™ extend the mind-occupying challenge",
+      "Made in the USA. Globally Sourced Materials.",
+      "Patented Goodie Gripper™ holes are ideal for stuffing challenges"
     ],
-    "video": "/videos/dog-toy2.mp4",
+    "video": "/images/videos/kong-bone.mp4",
     "images": [
-      "/images/products/2.jpeg"
+      "/images/products/2.jpeg",
+      "/images/products/KB31_LIFE_1.jpg",
+      "/images/products/KB31_OFF_PK_1.png",
+      "/images/products/KB31_EDU_1.png",
+      "/images/products/KB31_ON_PK_1.png",
+      "/images/products/KB31_DIM_OFF_PK_1.png"
     ]
   },
   "1000003": {
     "title": "Lobster Plushie Dog Toy",
     "price": 9.99,
+    "category":"Dog",
+    "shortdes": "A fun, plush toy shaped like a lobster, great for cuddling and light play.",
     "description": "A fun, plush toy shaped like a lobster, great for cuddling and light play.",
     "features": [
       "Soft plush material",
@@ -47,7 +62,9 @@
   "1000004": {
     "title": "Tim Hortons Plushie Dog Toy",
     "price": 14.99,
-    "description": "A cute plushie dog toy shaped like a Tim Hortons cup, perfect for playful pups.",
+    "category":"Dog",
+    "shortdes": "A cute plushie dog toy shaped like a Tim Hortons cup, perfect for playful pups.",
+    "description": "",
     "features": [
       "Unique design",
       "Soft and cuddly",
@@ -61,7 +78,9 @@
   "2000001": {
     "title": "Classic Cat Toy - Feather Ball",
     "price": 6.99,
-    "description": "A feathered ball toy that stimulates your cat's natural hunting instincts.",
+    "category":"Cat",
+    "shortdes": "A feathered ball toy that stimulates your cat's natural hunting instincts.",
+    "description": "" ,
     "features": [
       "Lightweight design for easy batting",
       "Colorful feathers for visual stimulation",
@@ -75,7 +94,9 @@
   "2000002": {
     "title": "Classic Cat Toy - Jingle Balls (3 Pack)",
     "price": 7.99,
-    "description": "A pack of three jingle balls that are perfect for chasing and batting.",
+    "category":"Cat",
+    "shortdes": "A pack of three jingle balls that are perfect for chasing and batting.",
+    "description": "" ,
     "features": [
       "Built-in bell for audible play",
       "Lightweight and easy to chase",
@@ -89,7 +110,9 @@
   "2000003": {
     "title": "Cat Plushie Cat Nip Toy",
     "price": 8.99,
-    "description": "A plush catnip-infused toy designed to attract and entertain your cat.",
+    "category":"Cat",
+    "shortdes": "A plush catnip-infused toy designed to attract and entertain your cat.",
+    "description": "" ,
     "features": [
       "Infused with catnip",
       "Soft plush exterior",
@@ -103,7 +126,9 @@
   "2000004": {
     "title": "Flirt Pole Feather Cat Toy",
     "price": 11.99,
-    "description": "A flirt pole with feathers that encourages active play and exercise for your cat.",
+    "category":"Cat",
+    "shortdes": "A flirt pole with feathers that encourages active play and exercise for your cat.",
+    "description": "" ,
     "features": [
       "Interactive toy for cats",
       "Feather attachment",
@@ -117,7 +142,9 @@
   "3000001": {
     "title": "Bat Cave Small Pet Bed",
     "price": 25.99,
-    "description": "A cozy, bat-shaped pet bed designed for small pets like hamsters and guinea pigs.",
+    "category":"Other",
+    "shortdes": "A cozy, bat-shaped pet bed designed for small pets like hamsters and guinea pigs.",
+    "description": "" ,
     "features": [
       "Soft and plush interior",
       "Unique bat design",
@@ -131,7 +158,9 @@
   "3000002": {
     "title": "Pumpkin Small Pet Costume",
     "price": 14.99,
-    "description": "A cute pumpkin costume designed for small pets like rabbits and guinea pigs.",
+    "category":"Other",
+    "shortdes": "A cute pumpkin costume designed for small pets like rabbits and guinea pigs.",
+    "description": "" ,
     "features": [
       "Adorable pumpkin design",
       "Adjustable straps for a comfortable fit",
@@ -145,7 +174,9 @@
   "3000003": {
     "title": "Mermaid Tail Character Hut",
     "price": 35.99,
-    "description": "A fun, mermaid-themed hut for small pets to hide and sleep in.",
+    "category":"Other",
+    "shortdes": "A fun, mermaid-themed hut for small pets to hide and sleep in.",
+    "description": "" ,
     "features": [
       "Mermaid tail design",
       "Soft interior",
@@ -159,7 +190,9 @@
   "3000004": {
     "title": "Wooden Circle Aquarium Ornament",
     "price": 9.99,
-    "description": "A wooden circle ornament designed for aquariums, perfect for fish to swim through.",
+    "category":"Other",
+    "shortdes": "A wooden circle ornament designed for aquariums, perfect for fish to swim through.",
+    "description": "" ,
     "features": [
       "Natural wood design",
       "Safe for freshwater and saltwater tanks",

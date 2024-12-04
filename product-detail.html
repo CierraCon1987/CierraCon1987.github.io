@@ -40,8 +40,8 @@
                 <div class="links">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html" class="active">Products</a></li>
                         <li><a href="adoption.html">Adoption</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
@@ -50,7 +50,10 @@
                             <a href="register.php">Sign Up</a>
                         </li>
                         <li class="cart-icon">
-                            <a href="cart.html"><img src="/images/general/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Cart" style="width: 24px; height: 24px;"></a>
+                            <a href="cart.html">
+                                <img src="/images/general/shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Cart" style="width: 24px; height: 24px;">
+                            </a>
+                            <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background-color: red; color: white; font-size: 12px; font-weight: bold; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
                         </li>
                     </ul>
                 </div>
@@ -72,6 +75,8 @@
             </script>
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </header>
+
+    <button id="backToProductsBtn">Back to Products</button>
 
     <main class="product-container">
 
@@ -100,7 +105,9 @@
                 <ul id="features-list"></ul>
             </div>
     
-            <button class="custom-btn" onclick="purchaseProduct()">Purchase</button>
+            <button class="custom-btn" id="addToCartButton">Add to Cart</button>
+            <p class="cart-message"></p>
+
         </section>
     </main>
 

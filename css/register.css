@@ -106,14 +106,22 @@ label {
     text-decoration: underline;
 }
 .form-group {
+<<<<<<< HEAD
     /*position: relative;*/
+=======
+   
+>>>>>>> 389384ce6c5c3319cef26554ec988ec787cb0717
     margin-bottom: 15px;
 }
 
 .form-group small {
     color: red;
+<<<<<<< HEAD
    /* position: absolute;*/
     bottom: -24px;
+=======
+    bottom: -18px;
+>>>>>>> 389384ce6c5c3319cef26554ec988ec787cb0717
     left: 0;
 }
 
@@ -153,6 +161,7 @@ label {
     90% { opacity: 1; }
     100% { opacity: 0; }
 }
+<<<<<<< HEAD
 #google_translate_element {
     display: flex;
     padding: 7px;
@@ -178,3 +187,5 @@ label {
         padding: 10px;
     }
 }
+=======
+>>>>>>> 389384ce6c5c3319cef26554ec988ec787cb0717
