@@ -38,7 +38,7 @@
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="adoption.html">Adoption</a></li>
+                        <li><a href="adoption.php">Adoption</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
                         <li class="login-signup">

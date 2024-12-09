@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="adoption.html">Adoption</a></li>
+                        <li><a href="adoption.php">Adoption</a></li>
                         <li><a href="contact.php" class="active">Contact</a></li>
                         <li><a href="articles.html">Articles</a></li>
                         <li class="login-signup">
@@ -392,7 +392,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="adoption.html">Adoption</a></li>
+                    <li><a href="adoption.php">Adoption</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="articles.html">Articles</a></li>
                 </ul>

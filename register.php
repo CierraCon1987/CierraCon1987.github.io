@@ -1,4 +1,8 @@
 <?php
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+
+// require 'vendor/autoload.php';
 // Include database connection file
 include 'database_connection.php';
 
@@ -46,7 +50,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($stmt->execute()) {
                 $successMessage = "Registration successful!";
+                
 
+                $adminEmail = "harpreetbet024@gmail.com"; // Replace with your admin email
+                $subject = "New Customer Registration - Wags & Whiskers";
+                $message = "Hello Admin,\n\nA new customer has registered on your website.\n\nDetails:\n";
+                $message .= "Name: $name\n";
+                $message .= "Email: $email\n\n";
+                $message .= "Best regards,\nWags & Whiskers Team";
+            
+
+                try {
+                    // Server settings
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';  // Use your SMTP server here
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'harpreetbet024@gmail.com'; // Your email address
+                    $mail->Password = 'Harpreet@0203';  // Your email password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port = 587;
+
+                    // Recipients
+                    $mail->setFrom('harpreetbet035@gmail.com', 'Wags & Whiskers');
+                    $mail->addAddress($adminEmail);
+
+                    // Content
+                    $mail->isHTML(false);
+                    $mail->Subject = $subject;
+                    $mail->Body    = $message;
+
+                    $mail->send();
+                    $successMessage .= " Admin has been notified.";
+                } catch (Exception $e) {
+                    $errors[] = "Registration successful, but failed to notify admin. Error: {$mail->ErrorInfo}";
+                }
+                header("Location: login.php?message=registration_successful");
+                exit();
             } else {
                 $errors[] = "Error: Unable to complete registration. Please try again.";
             }
@@ -54,6 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
     }
 }
+?>
 
 
 ?>
@@ -81,6 +121,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Custom JS -->
    <script src="js/header.js" defer></script>
     <script src="js/fadein.js" defer></script> 
+    <script>
+        // Automatically hide messages after 5 seconds
+        setTimeout(() => {
+            const messages = document.querySelectorAll('.successMessage');
+            messages.forEach(successMessage => {
+                successMessage.style.opacity = '0';
+                setTimeout(() => successMessage.remove(), 500); // Wait for fade-out transition
+            });
+        }, 5000);
+    </script>
 </head>
 
 <body>
