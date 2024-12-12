@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.contact-us h1 {
+    text-align: center;
+    font-size: var(--size-2xl);
+    font-weight: bolder;
+}
+
+.contact-us {
+    padding: 20px 50px 0 50px;
+}
+
+.contact-us p {
+    font-size: var(--size-md);
+    padding: 0 100px 0 100px;
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.contact-grid2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-image img {
+    width: 100%;
+    border-radius: 5px;
+    max-width: 700px;
+}
+
+.contact-image p {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.contact-form {
+    background-color: var(--neutral1);
+    padding: 20px 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form h2 {
+    text-align: left;
+    margin: 0;
+}
+
+.newsletter-header {
+    text-align: center;
+    margin: 0;
+}
+
+.contact-form p {
+    text-align: left;
+    padding: 0;
+    font-size: var(--size-md);
+    margin: 0;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--darkgrey);
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: var(--compliment2);
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .contact-image img {
+        margin: 0 auto;
+    }
+}
+
+.contact-lower {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.address-statement {
+    flex: 1;
+    text-align: center;
+    padding: 10px 50px;
+    font-size: var(--size-xl);
+}
+
+.support-hours {
+    flex: 1;
+    text-align: left;
+    margin-top: 20px;
+    font-size: var(--size-md);
+}
+
+@media (max-width: 768px) {
+    .contact-lower {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.contact-map {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    height: 450px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.newsletter {
+    background-color: #e9ecef;
+    padding: 20px;
+    text-align: left;
+}
+
+.newsletter h3 {
+    padding: 0 100px 0 100px;
+    text-align: left;
+}
+
+.newsletter h4 {
+    padding: 0 0 0 500px;
+    text-align: left;
+}
+
+.newsletter p {
+    padding: 0 100px 0 100px;
+    text-align: left;
+}
+
+.newsletter-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+.newsletter-signup input {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid var(--neutral2);
+    border-radius: 3px;
+}
+
+.newsletter-signup button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: var(--primary);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.newsletter-signup button:hover {
+    background-color: var(--compliment2);
+}
+
+.sub-list img {
+    max-width: 20px;
+}
+
+.sub-list ul li {
+    list-style-type: none;
+    text-align: left;
+    padding: 0 0 0 500px;
+    margin: 0;
+}
+
+#signup-info {
+    text-align: center;
+}
+
+/* Medium-sized screens (Tablets) */
+@media (max-width: 1024px) {
+    .contact-map {
+        width: 80%;
+        height: 350px;
+    }
+}
+
+/* Small-sized screens (Mobile) */
+@media (max-width: 768px) {
+    .contact-map {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .contact-map {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* Validation Error Style */
+input.invalid, select.invalid, textarea.invalid {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+}
