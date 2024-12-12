@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Wags & Whiskers</title>
-    <link rel="icon" type="image/x-icon" href="/images/wandw-favicon.svg">
+    <link rel="icon" type="image/x-icon" href="images/wandw-favicon.svg">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="fade-in login-form">
                 <h1 class="welcome-text">Welcome Back!</h1>
-                <img src="/images/wandw-logo-large.svg" alt="Pet Image" class="pet-image">
+                <img src="images/wandw-logo-large.svg" alt="Pet Image" class="pet-image">
                 <form method="POST">
                     <h2 class="login-header">Login</h2>
                     <div class="form-group">

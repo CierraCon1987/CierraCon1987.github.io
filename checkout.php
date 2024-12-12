@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cart_total'])) {
                     ]
                 ]
             ],
-            "success_url" => "http://localhost/success.php",
-            "cancel_url" => "http://localhost/cart.php"
+            "success_url" => "http://localhost/wags/success.php",
+            "cancel_url" => "http://localhost/wags/cart.php"
         ]);
 
         http_response_code(303);

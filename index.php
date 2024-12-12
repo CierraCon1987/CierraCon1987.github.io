@@ -71,29 +71,29 @@
                 </div>
             </div>
         </section>
-        <!-- Top Deals Section
+        <!-- Top Deals Section -->
         <section class="fade-in deals-container">
             <h1 class="deals-title">Top Deals</h1>
             <div class="deals">
-                Cat Food Deal
+                <!-- Cat Food Deal -->
                 <div class="deal">
                     <h2>25% off<br>Cat Food</h2>
-                    <button>Shop Now</button>
+                    <a href="products.php" class="cta-button btn">Shop Now</a>
                     <img src="images/products/catfood.png" alt="A bowl of cat food">
                 </div>
-                Cat Toys Deal
+                <!-- Cat Toys Deal -->
                 <div class="deal">
                     <h2>10% off<br>Cat Toys</h2>
-                    <button>Shop Now</button>
+                    <a href="products.php" class="cta-button btn">Shop Now</a>
                     <img src="images/products/cattoy.png" alt="Cat toys">
                 </div>
-                Dog Treats Deal -->
-                <!-- <div class="deal">
+                <!-- Dog Treats Deal -->
+                <div class="deal">
                     <h2>15% off<br>Dog Treats</h2>
-                    <button>Shop Now</button>
+                    <a href="products.php" class="cta-button btn">Shop Now</a>
                     <img src="images/products/dogtreat.png" alt="Dog treats">
                 </div>
-            </div> -->
+            </div>
         </section>
     </main>
 
